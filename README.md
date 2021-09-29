@@ -10,7 +10,7 @@ It not aims to be a complete implementation of an `enum` class, it just let you 
 ```php
 use Blabs\Dictionary\Dictionary;
 
-class FruitsTestingDictionary extends Dictionary
+class Fruits extends Dictionary
 {
     const APPLE = 'apple';
     const BANANA = 'banana';
@@ -19,14 +19,14 @@ class FruitsTestingDictionary extends Dictionary
 
 // return all "values" from the dictionary
 
-FruitsTestingDictionary::values() // outputs [ 'apple', 'banana', 'orange' ]
+Fruits::values() // outputs [ 'apple', 'banana', 'orange' ]
 
 
 // check if a value is valid
 
-FruitsTestingDictionary::isValid('apple') // outputs `true`
+Fruits::isValid('apple') // outputs `true`
 
-FruitsTestingDictionary::isValid('tomato') // outputs `false`
+Fruits::isValid('tomato') // outputs `false`
 ```
 
 ## Disclaimer
