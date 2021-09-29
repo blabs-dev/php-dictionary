@@ -12,6 +12,10 @@ It not aims to be an implementation of an __enumerable class__, it just let you 
 composer require blabs-dev/dictionary
 ```
 
+## Requirements
+`1.0.*` versions of the package has been tested locally and is working with php 5.6.40 but can not be used with php `^7.*|8.*`.
+Check `main` branch for last php versions.
+
 ## Usage
 The package let you choose if you prefer to extend an abstract class or use a trait to implement dictionary features in your class.
 
