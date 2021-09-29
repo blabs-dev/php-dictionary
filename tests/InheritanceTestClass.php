@@ -4,7 +4,7 @@ namespace Blabs\Dictionary\Tests;
 
 use Blabs\Dictionary\Dictionary;
 
-class FruitsTestingDictionary extends Dictionary
+class InheritanceTestClass extends Dictionary
 {
     const APPLE = 'apple';
     const BANANA = 'banana';

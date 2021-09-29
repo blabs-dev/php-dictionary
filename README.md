@@ -12,7 +12,15 @@ composer require blabs-dev/dictionary
 ```
 
 ## Usage
+The package let you choose if you prefer to extend an abstract class or use a trait to implement dictionary features in your class.
+
+The first approach is useful for single responsibility classes such as a simple dictionary of strings, while the latter can be convenient if your class already has inheritance with other dependencies and you simply want to being able to check vailidity of a value against a list of the class constants.
+
+### Using inheritance (extending abstract class)
 ```php
+
+// create a class extending the Dictionary abstract
+
 use Blabs\Dictionary\Dictionary;
 
 class Fruits extends Dictionary
@@ -21,6 +29,55 @@ class Fruits extends Dictionary
     const BANANA = 'banana';
     const ORANGE = 'orange';
 }
+
+
+// return all "values" from the dictionary
+
+Fruits::values() // outputs [ 'apple', 'banana', 'orange' ]
+
+
+// check if a value is valid
+
+Fruits::isValid('apple') // outputs `true`
+
+Fruits::isValid('tomato') // outputs `false`
+```
+
+### Using composition (with trait)
+
+```php
+
+// include the trait in your existing class
+
+use Blabs\Dictionary\WithDictionary;
+
+class MyVegetablesService extends StockService
+{
+    use WithDictionary;  // declare that the class will use methods in the trait
+
+    const AUBERGINE = 'aubergine';
+    const SWEET_PEPPER = 'sweet pepper';
+    const TOMATO = 'tomato';
+    
+    public function prepareForShipping($vegetable, $quantity)
+    {
+        // ....
+        
+        if (! self::isValid($vegetable))  // recall dictionary method isValid() to check a value
+            throw new InvalidArgumentException('this is not a veggie!')
+    }
+    
+    public function checkStockAvailability()
+    {
+        // ....
+        
+        foreach (self::values() as $vegetable)  // cycle all vegetables
+        {
+            $this->checkStocks($vegetable);
+        }
+    }
+}
+
 
 // return all "values" from the dictionary
 
