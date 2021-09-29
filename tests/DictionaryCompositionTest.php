@@ -9,7 +9,7 @@ class DictionaryCompositionTest extends TestCase
 {
     private $vegetables;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->vegetables = new CompositionTestClass();

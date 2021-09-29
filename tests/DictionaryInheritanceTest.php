@@ -9,7 +9,7 @@ class DictionaryInheritanceTest extends TestCase
 {
     private $fruits;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
         $this->fruits = new InheritanceTestClass();
