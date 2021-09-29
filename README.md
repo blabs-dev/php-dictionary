@@ -6,6 +6,11 @@ We've decided to write this package just to use it without much dependencies on 
 
 It not aims to be a complete implementation of an `enum` class, it just let you add some constants to a class and being able to quick get all definition values as array or checking if a value is "valid". 
 
+## Installation
+```
+composer require blabs-dev/dictionary
+```
+
 ## Usage
 ```php
 use Blabs\Dictionary\Dictionary;
