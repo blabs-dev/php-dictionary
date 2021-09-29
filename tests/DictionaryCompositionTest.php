@@ -2,6 +2,7 @@
 
 namespace Blabs\Dictionary\Tests;
 
+use Blabs\Dictionary\Tests\Classes\CompositionTestClass;
 use PHPUnit\Framework\TestCase;
 
 class DictionaryCompositionTest extends TestCase
@@ -23,7 +24,7 @@ class DictionaryCompositionTest extends TestCase
             'aubergine',
             'sweet pepper',
             'tomato',
-        ], $this->vegetables->values());
+        ], $this->vegetables->getVegetables());
     }
 
     /**
@@ -31,7 +32,7 @@ class DictionaryCompositionTest extends TestCase
      */
     public function it_can_checks_if_a_value_is_valid_using_composition()
     {
-        $this->assertTrue($this->vegetables->isValid('aubergine'));
+        $this->assertTrue($this->vegetables->isVegetable('aubergine'));
     }
 
     /**
@@ -39,6 +40,16 @@ class DictionaryCompositionTest extends TestCase
      */
     public function it_can_checks_if_a_value_is_not_valid_using_composition()
     {
-        $this->assertFalse($this->vegetables->isValid('apple'));
+        $this->assertFalse($this->vegetables->isVegetable('apple'));
+    }
+
+    /**
+     * @test
+     */
+    public function dictionary_static_methods_can_be_used_with_composition()
+    {
+        $this->assertFalse(CompositionTestClass::isValid('apple'));
+        $this->assertTrue(CompositionTestClass::isValid('aubergine'));
+        $this->assertCount(3, CompositionTestClass::values());
     }
 }

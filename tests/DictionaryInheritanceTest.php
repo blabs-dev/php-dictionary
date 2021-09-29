@@ -2,6 +2,7 @@
 
 namespace Blabs\Dictionary\Tests;
 
+use Blabs\Dictionary\Tests\Classes\InheritanceTestClass;
 use PHPUnit\Framework\TestCase;
 
 class DictionaryInheritanceTest extends TestCase

@@ -1,6 +1,6 @@
 <?php
 
-namespace Blabs\Dictionary\Tests;
+namespace Blabs\Dictionary\Tests\Classes;
 
 use Blabs\Dictionary\Dictionary;
 
