@@ -10,7 +10,7 @@ trait WithDictionary
     /**
      * @return array
      */
-    static function all()
+    static function all(): array
     {
         $reflectionClass = new ReflectionClass(static::class);
         return $reflectionClass->getConstants();
@@ -19,16 +19,16 @@ trait WithDictionary
     /**
      * @return array
      */
-    static function values()
+    static function values(): array
     {
         return array_values(self::all());
     }
 
     /**
-     * @param string $value
+     * @param mixed $value
      * @return bool
      */
-    static function isValid($value)
+    static function isValid($value): bool
     {
         return in_array($value, self::values());
     }
