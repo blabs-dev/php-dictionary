@@ -1,10 +1,10 @@
 <?php
 
-namespace Blabs\Dictionary\Tests;
+namespace Blabs\Dictionary\Tests\Classes;
 
 use Blabs\Dictionary\Dictionary;
 
-class FruitsTestingDictionary extends Dictionary
+class InheritanceTestClass extends Dictionary
 {
     const APPLE = 'apple';
     const BANANA = 'banana';
